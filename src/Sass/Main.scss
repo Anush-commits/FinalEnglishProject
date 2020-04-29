@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+$TxtClr: #00adb5;
+$back: #222831;
+@import './MediaQueries.scss';
+* {
+  list-style: none;
+  text-align: start;
+  margin: 0;
+  padding: 0;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+@mixin WidthHeight ($wid, $hei) {
+  width: $wid;
+  height: $hei;
+}
+
+@mixin Display ($disp, $cont: flex-start) {
+  display: $disp;
+  justify-content: $cont;
+  align-items: center;
+}
+
+@mixin ColorBgColor ($col, $bg) {
+  background-color: $bg;
+  color: $col;
+}
+
+.App-header {
+  @include Display(flex);
+  @include ColorBgColor(#eeeeee, $back);
+  height: 2.5em;
+  font-size: calc(10px + 2vmin);
+
+  .nav-links {
+    list-style: none;
+    @include Display(flex, space-evenly);
+    @include responsive(middle) {
+      display: none;
+    }
+    @include responsive(table) {
+      display: none;
+    }
+    a {
+      text-decoration: none;
+      color: #eeeeee;
+      margin: 0em 0.5em;
+    }
+  }
+}
+
+.material-icons {
+  font-size: 38px;
+  position: relative;
+  top: 0.4em;
+  right: 0.3em;
+  color: $TxtClr;
+}
+
+/* dropdawn menu */
+
+.dropdown {
+  display: none;
+  background-color: $back;
+  padding: 1em 0;
+  line-height: 2em;
+  color: $TxtClr;
+  width: 30%;
+  li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &:hover {
+      background-color: #393e46;
+    }
+  }
+}
+
+#homeicon {
+  width: 1.2em;
+  height: 1.5em;
+}
+
+.ill {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-rows: repeat(auto-fit, minmax(300px, 700px));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 800px));
+}
+.WelcomePart{
+  padding: 12px;
+  h1 {
+    color: $TxtClr;
+    font-size: 50px;
+    font-weight: 500;
+  }
+  h2 {
+    margin-top: 30px;
+    
+  }
+}

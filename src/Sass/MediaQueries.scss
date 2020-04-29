@@ -1,0 +1,37 @@
+@mixin  responsive ($size) {
+    @if $size == smaller {
+        @media only screen and (max-width:300px){
+            @content
+        };
+    }
+    @if $size == small {
+        @media only screen and (max-width:550px){
+            @content
+        };
+    }
+    @if $size == middle {
+        @media (min-width:550px) and (max-width: 700px) {
+            @content
+        };
+    }
+    @if $size == table {
+        @media (min-width:700px) and (max-width: 900px) {
+            @content
+        };
+    }
+    @if $size == medium {
+        @media  (min-width: 900px) and (max-width: 1000px) {
+            @content
+        };
+    }
+    @if $size == larger {
+        @media  (min-width: 1000px) and (max-width: 1200px) {
+            @content
+        };
+    }
+    @if $size == normal {
+        @media  (min-width: 1200px) and (max-width: 2700px) {
+            @content
+        };
+    }
+}
